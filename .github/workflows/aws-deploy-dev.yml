@@ -1,0 +1,53 @@
+name: Deploy Dev
+on:
+  push:
+    branches:
+      - develop
+env:
+  DEV_S3_BUCKET: ""
+  DEV_CLOUDFRONT_DISTRIBUTION_ID: ""
+  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+  AWS_DEFAULT_REGION: ""
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout project
+        uses: actions/checkout@v3
+
+      - name: Use pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: latest
+
+      - name: Use node
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'pnpm'
+
+      - name: Installing dependencies
+        run: pnpm i
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1-node16
+        with:
+          aws-region: ${{ env.AWS_DEFAULT_REGION }}
+
+      - name: Receive environment variables for build
+        run: |
+          aws ssm get-parameter --name "" --with-decryption | jq -r ".Parameter.Value" > .env
+          cat .env
+
+      - name: Running Build
+        run: pnpm run build
+
+      - name: Clear
+        run: aws s3 rm s3://$DEV_S3_BUCKET --recursive
+
+      - name: Deploying
+        run: aws s3 sync ./build s3://$DEV_S3_BUCKET --cache-control 'no-cache'
+
+      - name: Finishing
+        run: aws cloudfront create-invalidation --distribution-id $DEV_CLOUDFRONT_DISTRIBUTION_ID --paths "/*"

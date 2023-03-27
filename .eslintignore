@@ -1,0 +1,10 @@
+.idea
+.github
+.husky
+.run
+.storybook
+dist
+node_modules
+coverage
+storybook-static
+test-results
