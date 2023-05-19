@@ -1,7 +1,7 @@
 .DS_Store
 .idea
-dist
-dist-ssr
+build
+build-ssr
 node_modules
 test-results
 *.local
