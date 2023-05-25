@@ -8,6 +8,9 @@ export default defineConfig(
   (configEnv): UserConfig => ({
     base: './',
     publicDir: './src/assets',
+    build: {
+      outDir: './build',
+    },
     server: {
       port,
       strictPort: true,

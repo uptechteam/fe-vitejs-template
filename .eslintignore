@@ -3,7 +3,7 @@
 .husky
 .run
 .storybook
-dist
+build
 node_modules
 coverage
 storybook-static
