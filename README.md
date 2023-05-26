@@ -1,5 +1,10 @@
 # ViteJS React TypeScript Template
 
+## Introduction
+
+This template uses all the fastest utils/builder to provide the most efficient linting / testing / building process.
+This template also uses NodeJS v18+ (latest LTS), that contains all the latest security and performance improvements.
+
 ## Installation
 
 Install pnpm if not installed yet:
@@ -32,13 +37,13 @@ pnpm i
 ```
 
 ## Template's core:
-* [NodeJS](https://nodejs.org/en/)
+* [NodeJS 18](https://nodejs.org/en/)
 * [pnpm](https://pnpm.io/)
 * [ViteJS](https://vitejs.dev/)
 
 ## Production bundle includes:
 
-* [ReactJS](https://reactjs.org/)
+* [ReactJS 18](https://reactjs.org/)
 * Material UI
 
 ## Development dependencies:
