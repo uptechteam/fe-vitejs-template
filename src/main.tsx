@@ -1,24 +1,29 @@
 import 'react-toastify/dist/ReactToastify.min.css';
 
-import React, { Suspense } from 'react';
+import { Suspense } from 'react';
 import { createRoot } from 'react-dom/client';
+import { ErrorBoundary } from 'react-error-boundary';
+import { RouterProvider } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 
-import { App } from '~/components/atoms/App';
+import { ErrorMessage } from '~/components/atoms';
 import { LoadingMessage } from '~/components/atoms/LoadingMessage';
+import { router } from '~/router/routes';
 
 createRoot(document.getElementById('root')).render(
   <Suspense fallback={<LoadingMessage />}>
-    <App />
-    <ToastContainer
-      position="top-center"
-      autoClose={false}
-      newestOnTop={false}
-      closeOnClick
-      rtl={false}
-      pauseOnFocusLoss
-      draggable
-      theme="light"
-    />
+    <ErrorBoundary FallbackComponent={ErrorMessage} key={location.pathname}>
+      <RouterProvider router={router} />
+      <ToastContainer
+        position="top-center"
+        autoClose={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        theme="light"
+      />
+    </ErrorBoundary>
   </Suspense>
 );
