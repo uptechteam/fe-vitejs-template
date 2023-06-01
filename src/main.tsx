@@ -1,4 +1,4 @@
-import 'react-toastify/dist/ReactToastify.css';
+import 'react-toastify/dist/ReactToastify.min.css';
 
 import { Suspense } from 'react';
 import { createRoot } from 'react-dom/client';
