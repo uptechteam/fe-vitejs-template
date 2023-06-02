@@ -5,9 +5,11 @@
     "build": "vite build",
     "dev": "vite",
     "lint": "eslint .",
-    "prepare": "husky install",
+    "prepare": "husky install && pnpm template:add:remote",
     "preview": "vite preview",
-    "serve": "vite serve"
+    "serve": "vite serve",
+    "template:add:remote": "sh ./scripts/add-template-remote.sh",
+    "template:update": "sh ./scripts/merge-template-changes.sh"
   },
   "engines": {
     "node": "^18.16.0",
