@@ -4,7 +4,7 @@ import { App } from '~/components/atoms';
 
 export const router = createBrowserRouter([
   {
-    path: '/',
+    path: '*',
     element: <App />,
   },
 ]);

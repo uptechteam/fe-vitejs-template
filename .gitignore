@@ -2,6 +2,7 @@
 .idea
 build
 build-ssr
+storybook-static
 node_modules
 test-results
 *.local
