@@ -49,6 +49,7 @@
     "eslint-plugin-simple-import-sort": "^10.0.0",
     "eslint-plugin-unused-imports": "^2.0.0",
     "husky": "^8.0.3",
+    "npm-check-updates": "^16.10.17",
     "prettier": "^2.8.6",
     "storybook": "^7.0.18",
     "typescript": "^5.0.2",
