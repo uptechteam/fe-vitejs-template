@@ -13,6 +13,8 @@ export const Textarea = <T extends object>({
   outsideError,
   label,
   maxLength = 500,
+  wrapProps = {},
+  ...props
 }: IProps<T>) => {
   const {
     field,
@@ -25,7 +27,7 @@ export const Textarea = <T extends object>({
   const errorMessage = error?.message || outsideError;
 
   return (
-    <Box width="100%">
+    <Box width="100%" {...wrapProps}>
       {label && (
         <InputLabel htmlFor={name} error={!!errorMessage}>
           {label}
@@ -33,6 +35,7 @@ export const Textarea = <T extends object>({
       )}
       <StyledTextareaAutosize
         {...field}
+        {...props}
         disabled={disabled}
         id={name}
         placeholder={placeholder}

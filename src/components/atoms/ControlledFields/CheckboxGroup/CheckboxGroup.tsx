@@ -18,7 +18,8 @@ export const CheckboxGroup = <T extends object>({
   options,
   gridProps,
   gridSize = 12,
-  ...props
+  checkboxProps = {},
+  ...wrapProps
 }: IProps<T>) => {
   const {
     field: { value, onChange },
@@ -31,7 +32,7 @@ export const CheckboxGroup = <T extends object>({
   const errorMessage = error?.message;
 
   return (
-    <Box width="100%" {...props}>
+    <Box width="100%" {...wrapProps}>
       {label && (
         <InputLabel htmlFor={name} error={!!errorMessage}>
           {label}
@@ -56,6 +57,7 @@ export const CheckboxGroup = <T extends object>({
                         onChange(value.filter((item) => item !== optionValue));
                       }
                     }}
+                    {...checkboxProps}
                   />
                 }
               />

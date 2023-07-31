@@ -19,8 +19,9 @@ export const RadioGroup = <T extends object>({
   outsideError,
   label,
   horizontal,
+  radioButtonProps = {},
   sx = {},
-  boxProps = {},
+  wrapProps = {},
 }: IProps<T>) => {
   const {
     field,
@@ -33,7 +34,7 @@ export const RadioGroup = <T extends object>({
   const errorMessage = error?.message || outsideError;
 
   return (
-    <Box width="100%" {...boxProps}>
+    <Box width="100%" {...wrapProps}>
       {label && (
         <InputLabel htmlFor={name} error={!!errorMessage}>
           {label}
@@ -41,8 +42,8 @@ export const RadioGroup = <T extends object>({
       )}
 
       <MuiRadioGroup
-        aria-labelledby={'${field.name}-label'}
         {...field}
+        aria-labelledby={'${field.name}-label'}
         value={field.value || null}
         sx={{
           ...sx,
@@ -59,6 +60,7 @@ export const RadioGroup = <T extends object>({
                 color="secondary"
                 checkedIcon={<CheckedRadioIcon />}
                 icon={<UncheckedRadioIcon />}
+                {...radioButtonProps}
               />
             }
             label={label}

@@ -1,4 +1,4 @@
-import { BoxProps, GridProps } from '@mui/material';
+import { BoxProps, CheckboxProps, GridProps } from '@mui/material';
 import { Control, Path } from 'react-hook-form';
 
 export interface IOption {
@@ -15,4 +15,5 @@ export interface IProps<T> extends BoxProps {
   label?: string;
   gridProps?: GridProps;
   gridSize?: number;
+  checkboxProps?: CheckboxProps;
 }
