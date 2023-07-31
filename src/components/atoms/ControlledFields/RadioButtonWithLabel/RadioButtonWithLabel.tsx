@@ -1,7 +1,8 @@
 import { FormControlLabel, FormHelperText, Radio } from '@mui/material';
 import { useController } from 'react-hook-form';
 
-import { CheckedRadioIcon, UncheckedRadioIcon } from '~/components/atoms';
+import { ReactComponent as CheckedRadioIcon } from '~/assets/svgs/checked-radio.svg';
+import { ReactComponent as UncheckedRadioIcon } from '~/assets/svgs/unchecked-radio.svg';
 
 import { IProps } from './types';
 

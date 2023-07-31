@@ -1,7 +1,8 @@
 import { Checkbox, FormControlLabel, FormHelperText } from '@mui/material';
 import { useController } from 'react-hook-form';
 
-import { CheckedIcon } from '../../Icons/CheckedIcon';
+import { ReactComponent as CheckedIcon } from '~/assets/svgs/checked.svg';
+
 import { CheckboxSpan } from './styles';
 import { IProps } from './types';
 

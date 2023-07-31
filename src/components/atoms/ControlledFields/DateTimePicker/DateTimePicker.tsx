@@ -6,7 +6,7 @@ import Box from '@mui/material/Box';
 import { useState } from 'react';
 import { useController } from 'react-hook-form';
 
-// import { CalendarIcon } from '~/components/atoms';
+// import { ReactComponent as CalendarIcon } from '~/assets/svgs/caledar.svg';
 import { InputLabel } from '../InputLabel';
 import { IProps } from './types';
 

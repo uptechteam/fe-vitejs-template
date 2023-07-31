@@ -2,6 +2,7 @@ import basicSsl from '@vitejs/plugin-basic-ssl';
 import react from '@vitejs/plugin-react';
 import { defineConfig, UserConfig } from 'vite';
 import { chunkSplitPlugin } from 'vite-plugin-chunk-split';
+import svgr from 'vite-plugin-svgr';
 
 export const port = 5173;
 
@@ -26,6 +27,7 @@ export default defineConfig(
           vendors: [/node_modules\//],
         },
       }),
+      svgr(),
     ],
     css: {
       modules: {
