@@ -1,3 +1,4 @@
+export * from './Autocomplete';
 export * from './CheckboxGroup';
 export * from './CheckboxWithLabel';
 export * from './DateTimePicker';

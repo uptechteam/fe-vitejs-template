@@ -10,6 +10,5 @@ export interface IProps<T> extends StandardTextFieldProps {
   disabled?: boolean;
   outsideError?: string;
   label?: string;
-  optional?: boolean;
   wrapProps?: BoxProps;
 }

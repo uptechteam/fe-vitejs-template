@@ -10,5 +10,4 @@ export interface IProps<T> extends BoxProps {
   disabled?: boolean;
   outsideError?: string;
   label?: string;
-  optional?: boolean;
 }

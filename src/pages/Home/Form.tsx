@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 
 import {
+  Autocomplete,
   CheckboxGroup,
   CheckboxWithLabel,
   Dropdown,
@@ -20,6 +21,7 @@ interface FormData {
   isContactInfoSame: boolean;
   model: string;
   model1: string;
+  model2: string;
   cities: string[];
   description: string;
   isInfoSame: boolean;
@@ -31,6 +33,7 @@ const defaultValues = {
   isContactInfoSame: true,
   model: 'test2',
   model1: 'test2',
+  model2: 'test1',
   cities: ['09'],
   description: '',
   isInfoSame: false,
@@ -180,6 +183,22 @@ export const Form = () => {
               alignContent: 'flex-start',
               columnSpacing: 16,
               sx: { height: '108px' },
+            }}
+          />
+        </Stack>
+        <Stack direction="row" mb={2}>
+          <Autocomplete
+            name="model2"
+            label="Check data item"
+            control={control}
+            options={dataItemsList}
+            sx={{
+              width: '100%',
+              '& .MuiOutlinedInput-root': {
+                height: '42px',
+                padding: '9px 14px',
+                outline: 'none',
+              },
             }}
           />
         </Stack>
