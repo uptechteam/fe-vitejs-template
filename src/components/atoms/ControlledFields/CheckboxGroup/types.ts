@@ -1,7 +1,7 @@
 import { BoxProps, GridProps } from '@mui/material';
 import { Control, Path } from 'react-hook-form';
 
-export interface Option {
+export interface IOption {
   label: string;
   value: string;
 }
@@ -9,7 +9,7 @@ export interface Option {
 export interface IProps<T> extends BoxProps {
   name: Path<T>;
   control: Control<T, object>;
-  options: Option[];
+  options: IOption[];
   placeholder?: string;
   disabled?: boolean;
   label?: string;

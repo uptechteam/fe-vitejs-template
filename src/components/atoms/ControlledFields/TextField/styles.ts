@@ -1,21 +1,19 @@
-import { styled } from '@mui/material';
+import { InputBase, styled } from '@mui/material';
 
-export const StyledTextField = styled('input')<{ error?: boolean }>`
-  height: 42px;
+export const StyledTextField = styled(InputBase)`
   width: 100%;
   border-radius: 5px;
-  border: none;
   outline: none;
-  font-family: 'NIKE Subtitle';
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 20px;
-  text-indent: 12px;
-  border: ${({ error, theme }) =>
-    error ? `1px solid ${theme.palette.error.main}` : 'none'};
+  border: 1px solid #ced4da;
 
   &::placeholder {
     font-size: 18px;
     line-height: 20px;
+  }
+
+  & .MuiInputBase-input {
+    padding: 10px 26px 10px 12px;
+    font-size: 16;
+    transition: theme.transitions.create([ 'border-color', 'box-shadow']);
   }
 `;

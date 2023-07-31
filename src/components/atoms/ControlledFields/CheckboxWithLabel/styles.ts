@@ -1,7 +1,7 @@
 import { styled } from '@mui/material/styles';
 
 export const CheckboxSpan = styled('span')`
-  background: rgba(255, 255, 255, 0.2);
+  background: #1976d2;
   border-radius: 4px;
   width: 28px;
   height: 28px;

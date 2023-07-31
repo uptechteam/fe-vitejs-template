@@ -56,6 +56,7 @@ export const RadioGroup = <T extends object>({
             value={value}
             control={
               <Radio
+                disableRipple
                 color="secondary"
                 checkedIcon={<CheckedRadioIcon />}
                 icon={<UncheckedRadioIcon />}

@@ -1,7 +1,8 @@
 import { FormControlLabel, Radio } from '@mui/material';
 import { useController } from 'react-hook-form';
 
-import { CheckedRadioIcon, RadioIcon } from './styles';
+import { CheckedRadioIcon, UncheckedRadioIcon } from '~/components/atoms';
+
 import { IProps } from './types';
 
 export const RadioButtonWithLabel = <T extends object>({
@@ -30,17 +31,10 @@ export const RadioButtonWithLabel = <T extends object>({
             }
           }}
           checkedIcon={<CheckedRadioIcon />}
-          icon={<RadioIcon />}
+          icon={<UncheckedRadioIcon />}
         />
       }
       {...props}
-      sx={{
-        '.MuiFormControlLabel-label': {
-          fontWeight: 700,
-          fontSize: '18px',
-        },
-        ...(props.sx && props.sx),
-      }}
     />
   );
 };

@@ -39,13 +39,6 @@ export const CheckboxWithLabel = <T extends object>({
         />
       }
       {...props}
-      sx={{
-        '.MuiFormControlLabel-label': {
-          fontWeight: 700,
-          fontSize: '18px',
-        },
-        ...(props.sx && props.sx),
-      }}
     />
   );
 };

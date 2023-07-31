@@ -5,7 +5,7 @@ import { InputLabel } from '../InputLabel';
 import { StyledTextareaAutosize } from './styles';
 import { IProps } from './types';
 
-export const TextareaAutosize = <T extends object>({
+export const Textarea = <T extends object>({
   name,
   control,
   placeholder,
@@ -40,7 +40,7 @@ export const TextareaAutosize = <T extends object>({
         maxLength={maxLength}
       />
 
-      <Typography color="text.disabled" mt={1.5}>{`${
+      <Typography color="text.disabled">{`${
         (field.value as string)?.length || 0
       }/${maxLength}`}</Typography>
 

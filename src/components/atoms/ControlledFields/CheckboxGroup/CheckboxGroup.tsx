@@ -5,7 +5,7 @@ import {
   FormGroup,
   Grid,
 } from '@mui/material';
-import { Path, PathValue, useController } from 'react-hook-form';
+import { useController } from 'react-hook-form';
 
 import { InputLabel } from '../InputLabel';
 import { IProps } from './types';
@@ -25,7 +25,6 @@ export const CheckboxGroup = <T extends object>({
   } = useController({
     name,
     control,
-    defaultValue: [] as PathValue<T, Path<T>>,
   });
 
   const errorMessage = error?.message;
