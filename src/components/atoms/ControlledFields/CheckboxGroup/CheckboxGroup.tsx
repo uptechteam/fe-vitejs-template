@@ -3,6 +3,7 @@ import {
   Checkbox,
   FormControlLabel,
   FormGroup,
+  FormHelperText,
   Grid,
 } from '@mui/material';
 import { useController } from 'react-hook-form';
@@ -62,6 +63,7 @@ export const CheckboxGroup = <T extends object>({
           ))}
         </Grid>
       </FormGroup>
+      {errorMessage && <FormHelperText error>{errorMessage}</FormHelperText>}
     </Box>
   );
 };

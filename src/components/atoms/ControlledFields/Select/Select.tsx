@@ -1,4 +1,4 @@
-import { Box, Typography } from '@mui/material';
+import { Box, FormHelperText } from '@mui/material';
 import { useController } from 'react-hook-form';
 
 import { InputLabel } from '../InputLabel';
@@ -11,7 +11,6 @@ export const Select = <T extends object>({
   control,
   outsideError,
   label,
-  onChange,
   ...props
 }: IProps<T>) => {
   const {
@@ -24,13 +23,6 @@ export const Select = <T extends object>({
 
   const errorMessage = error?.message || outsideError;
 
-  const onChangeValue = (event) => {
-    field.onChange(event);
-    if (onChange) {
-      onChange(event.target.value);
-    }
-  };
-
   return (
     <Box width="100%" {...props}>
       {label && (
@@ -39,7 +31,7 @@ export const Select = <T extends object>({
         </InputLabel>
       )}
       <SelectWrap>
-        <SelectStyled {...field} id={name} onChange={onChangeValue}>
+        <SelectStyled {...field} id={name} onChange={field.onChange}>
           <option value="" label=""></option>
           {options.map(({ value, label }) => (
             <option key={value} value={value} label={label}>
@@ -48,11 +40,7 @@ export const Select = <T extends object>({
           ))}
         </SelectStyled>
       </SelectWrap>
-      {errorMessage && (
-        <Typography ml="12px" mt="6px" color="error">
-          {errorMessage}
-        </Typography>
-      )}
+      {errorMessage && <FormHelperText error>{errorMessage}</FormHelperText>}
     </Box>
   );
 };

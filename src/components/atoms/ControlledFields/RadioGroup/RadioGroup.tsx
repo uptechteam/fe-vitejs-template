@@ -41,8 +41,7 @@ export const RadioGroup = <T extends object>({
       )}
 
       <MuiRadioGroup
-        aria-labelledby="radio-buttons-group-label"
-        name="radio-buttons-group"
+        aria-labelledby={'${field.name}-label'}
         {...field}
         value={field.value || null}
         sx={{

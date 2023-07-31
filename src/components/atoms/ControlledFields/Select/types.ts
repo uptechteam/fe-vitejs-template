@@ -11,5 +11,4 @@ export interface IProps<T> extends BoxProps {
   outsideError?: string;
   label?: string;
   optional?: boolean;
-  onChange?: (value: string) => void;
 }

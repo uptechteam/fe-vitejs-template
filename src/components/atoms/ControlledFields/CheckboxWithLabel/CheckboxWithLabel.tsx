@@ -1,4 +1,4 @@
-import { Checkbox, FormControlLabel } from '@mui/material';
+import { Checkbox, FormControlLabel, FormHelperText } from '@mui/material';
 import { useController } from 'react-hook-form';
 
 import { CheckedIcon } from '../../Icons/CheckedIcon';
@@ -9,36 +9,40 @@ export const CheckboxWithLabel = <T extends object>({
   name,
   control,
   label,
-  onChange,
   ...props
 }: IProps<T>) => {
-  const { field } = useController({
+  const {
+    field,
+    fieldState: { error },
+  } = useController({
     name,
     control,
   });
 
+  const errorMessage = error?.message;
+
   return (
-    <FormControlLabel
-      label={label}
-      control={
-        <Checkbox
-          {...field}
-          checked={field.value}
-          onChange={({ target: { checked: targetChecked } }) => {
-            field.onChange(targetChecked);
-            if (onChange) {
-              onChange(targetChecked);
+    <>
+      <FormControlLabel
+        label={label}
+        control={
+          <Checkbox
+            {...field}
+            checked={field.value}
+            onChange={({ target: { checked: targetChecked } }) => {
+              field.onChange(targetChecked);
+            }}
+            checkedIcon={
+              <CheckboxSpan>
+                <CheckedIcon />
+              </CheckboxSpan>
             }
-          }}
-          checkedIcon={
-            <CheckboxSpan>
-              <CheckedIcon />
-            </CheckboxSpan>
-          }
-          icon={<CheckboxSpan />}
-        />
-      }
-      {...props}
-    />
+            icon={<CheckboxSpan />}
+          />
+        }
+        {...props}
+      />
+      {errorMessage && <FormHelperText error>{errorMessage}</FormHelperText>}
+    </>
   );
 };

@@ -7,5 +7,4 @@ export interface IProps<T> extends FormControlLabelProps {
   placeholder?: string;
   disabled?: boolean;
   label?: string;
-  onChange?: (checked: boolean) => void;
 }
