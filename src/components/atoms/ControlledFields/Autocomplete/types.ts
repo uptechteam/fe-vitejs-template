@@ -3,8 +3,12 @@ import { Control, Path } from 'react-hook-form';
 
 import { IOption } from '../CheckboxGroup/types';
 
-export interface IProps<T>
-  extends AutocompleteProps<IOption, true, true, false> {
+type CustomAutoCompleteProps = Omit<
+  AutocompleteProps<IOption, true, false, false>,
+  'renderInput'
+>;
+
+export interface IProps<T> extends CustomAutoCompleteProps {
   name: Path<T>;
   control: Control<T, object>;
   type?: string;

@@ -33,7 +33,10 @@ const defaultValues = {
   isContactInfoSame: true,
   model: 'test2',
   model1: 'test2',
-  model2: 'test1',
+  model2: {
+    label: 'Test 3',
+    value: 'test3',
+  },
   cities: ['09'],
   description: '',
   isInfoSame: false,
