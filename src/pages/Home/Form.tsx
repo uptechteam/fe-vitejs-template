@@ -5,6 +5,7 @@ import { useForm } from 'react-hook-form';
 import {
   CheckboxGroup,
   CheckboxWithLabel,
+  Dropdown,
   RadioButtonWithLabel,
   RadioGroup,
   Select,
@@ -17,7 +18,8 @@ interface FormData {
   firstName: string;
   country: string;
   isContactInfoSame: boolean;
-  bootsStyleNumber: string;
+  model: string;
+  model1: string;
   cities: string[];
   description: string;
   isInfoSame: boolean;
@@ -27,7 +29,8 @@ const defaultValues = {
   firstName: '',
   country: 'PL',
   isContactInfoSame: true,
-  bootsStyleNumber: 'test2',
+  model: 'test2',
+  model1: 'test2',
   cities: ['09'],
   description: '',
   isInfoSame: false,
@@ -48,7 +51,7 @@ const countriesList = [
   },
 ];
 
-const bootsModelsList = [
+const dataItemsList = [
   {
     label: 'Test 1',
     value: 'test1',
@@ -92,14 +95,6 @@ export const Form = () => {
     setResult(data);
   };
 
-  const toggleDetails = (isOpen: boolean) => {
-    console.log('isOpen', isOpen);
-  };
-
-  const onChangeBoot = (value: string) => {
-    console.log('value', value);
-  };
-
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <Stack width="400px">
@@ -127,7 +122,6 @@ export const Form = () => {
             control={control}
             name="isContactInfoSame"
             label="Same details?"
-            onChange={toggleDetails}
           />
         </Stack>
         <Stack direction="row" mb={2}>
@@ -139,12 +133,31 @@ export const Form = () => {
         </Stack>
         <Stack direction="row" mb={2}>
           <Select
-            label="Boot model"
-            name="bootsStyleNumber"
-            onChange={onChangeBoot}
+            label="Choose model"
+            name="model"
             control={control}
-            options={bootsModelsList}
+            options={dataItemsList}
             width={264}
+          />
+        </Stack>
+        <Stack direction="row" mb={2}>
+          <Dropdown
+            label="Choose model"
+            name="model1"
+            control={control}
+            options={dataItemsList}
+            wrapProps={{
+              sx: {
+                width: 264,
+              },
+            }}
+            sx={{
+              width: '100%',
+              '& .MuiOutlinedInput-root': {
+                height: '42px',
+                outline: 'none',
+              },
+            }}
           />
         </Stack>
         <Stack direction="row" mb={2}>
@@ -160,6 +173,13 @@ export const Form = () => {
                   mr: 0,
                 },
               },
+            }}
+            gridSize={4}
+            gridProps={{
+              direction: 'column',
+              alignContent: 'flex-start',
+              columnSpacing: 16,
+              sx: { height: '108px' },
             }}
           />
         </Stack>

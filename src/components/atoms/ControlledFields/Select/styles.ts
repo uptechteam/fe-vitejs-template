@@ -5,7 +5,6 @@ export const SelectStyled = styled('select')`
     no-repeat;
   background-position: calc(100% - 15px) center !important;
   height: 42px;
-  font-size: 18px;
   line-height: 20px;
   outline: none;
   -moz-appearance: none !important;

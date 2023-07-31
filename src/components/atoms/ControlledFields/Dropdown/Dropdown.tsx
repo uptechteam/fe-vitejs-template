@@ -1,16 +1,16 @@
-import { Box, FormHelperText } from '@mui/material';
+import { Box, FormHelperText, MenuItem, TextField } from '@mui/material';
 import { useController } from 'react-hook-form';
 
 import { InputLabel } from '../InputLabel';
-import { SelectStyled, SelectWrap } from './styles';
 import { IProps } from './types';
 
-export const Select = <T extends object>({
+export const Dropdown = <T extends object>({
   options = [],
   name,
   control,
   outsideError,
   label,
+  wrapProps = {},
   ...props
 }: IProps<T>) => {
   const {
@@ -24,22 +24,19 @@ export const Select = <T extends object>({
   const errorMessage = error?.message || outsideError;
 
   return (
-    <Box width="100%" {...props}>
+    <Box width="100%" {...wrapProps}>
       {label && (
         <InputLabel htmlFor={name} error={!!errorMessage}>
           {label}
         </InputLabel>
       )}
-      <SelectWrap>
-        <SelectStyled {...field} id={name}>
-          <option value="" label=""></option>
-          {options.map(({ value, label }) => (
-            <option key={value} value={value} label={label}>
-              {label}
-            </option>
-          ))}
-        </SelectStyled>
-      </SelectWrap>
+      <TextField select {...field} {...props}>
+        {options.map(({ label, value }) => (
+          <MenuItem key={value} value={value}>
+            {label}
+          </MenuItem>
+        ))}
+      </TextField>
       {errorMessage && <FormHelperText error>{errorMessage}</FormHelperText>}
     </Box>
   );

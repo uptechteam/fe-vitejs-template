@@ -1,6 +1,7 @@
 export * from './CheckboxGroup';
 export * from './CheckboxWithLabel';
 export * from './DateTimePicker';
+export * from './Dropdown';
 export * from './InputLabel';
 export * from './RadioButtonWithLabel';
 export * from './RadioGroup';
