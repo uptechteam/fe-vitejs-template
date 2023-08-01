@@ -13,6 +13,7 @@ import {
   Textarea,
   TextField,
 } from '~/components/atoms';
+import { IOption } from '~/components/atoms/ControlledFields/CheckboxGroup/types';
 
 // Update this interface according to your form and move it outside this file
 interface FormData {
@@ -21,7 +22,7 @@ interface FormData {
   isContactInfoSame: boolean;
   model: string;
   model1: string;
-  model2: string;
+  model2: IOption;
   cities: string[];
   description: string;
   isInfoSame: boolean;
