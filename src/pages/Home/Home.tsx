@@ -3,7 +3,9 @@ import { useCallback, useState } from 'react';
 import { Button, Counter } from '~/components/atoms';
 import { displayToastSuccess } from '~/helpers';
 
-export const App = () => {
+import { Form } from './Form';
+
+export const Home = () => {
   const [value, setValue] = useState<number>(0);
   const handleOnClick = useCallback(() => {
     setValue((value) => value + 1);
@@ -14,6 +16,9 @@ export const App = () => {
     <div id="app">
       <Counter value={value} />
       <Button onClick={handleOnClick} />
+      <br />
+      <br />
+      <Form />
     </div>
   );
 };
