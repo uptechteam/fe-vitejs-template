@@ -9,3 +9,4 @@ export * from './RadioGroup';
 export * from './Select';
 export * from './Textarea';
 export * from './TextField';
+export * from './Toggle';
