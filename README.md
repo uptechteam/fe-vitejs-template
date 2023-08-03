@@ -53,3 +53,4 @@ pnpm i
 * [Husky](https://www.npmjs.com/package/husky) + hooks:
   * pre-commit: lint and test
   * commit-msg: conventional commit message
+* [CommitLint](https://www.conventionalcommits.org/en/v1.0.0/)
