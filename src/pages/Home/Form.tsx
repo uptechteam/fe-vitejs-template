@@ -12,6 +12,7 @@ import {
   Select,
   Textarea,
   TextField,
+  Toggle,
 } from '~/components/atoms';
 import { IOption } from '~/components/atoms/ControlledFields/CheckboxGroup/types';
 
@@ -26,6 +27,7 @@ interface FormData {
   cities: string[];
   description: string;
   isInfoSame: boolean;
+  isChecked: boolean;
 }
 
 const defaultValues = {
@@ -41,6 +43,7 @@ const defaultValues = {
   cities: ['09'],
   description: '',
   isInfoSame: false,
+  isChecked: false,
 };
 
 const countriesList = [
@@ -104,7 +107,7 @@ export const Form = () => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <Stack width="400px">
+      <Stack width="400px" margin="auto">
         <Stack direction="row" mb={2}>
           <TextField control={control} name="firstName" label="First name" />
         </Stack>
@@ -206,6 +209,11 @@ export const Form = () => {
             }}
           />
         </Stack>
+
+        <Stack direction="row" mb={2}>
+          <Toggle name="isChecked" label="Is checked?" control={control} />
+        </Stack>
+
         <Textarea name="description" label="Description" control={control} />
         <Stack direction="row" mb={2}>
           <MuiButton type="submit" variant="contained">
