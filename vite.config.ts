@@ -9,7 +9,7 @@ export const port = 5173;
 export default defineConfig(
   (configEnv): UserConfig => ({
     base: './',
-    publicDir: './src/assets',
+    publicDir: './public',
     build: {
       outDir: './build',
     },
