@@ -3,7 +3,6 @@ import { FormHelperText, Typography } from '@mui/material';
 import Box from '@mui/material/Box';
 // import { DateTimePicker as MuiDateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
 // import dayjs from 'dayjs';
-import { useState } from 'react';
 import { useController } from 'react-hook-form';
 
 // import { ReactComponent as CalendarIcon } from '~/assets/svgs/caledar.svg';
@@ -18,7 +17,7 @@ export const DateTimePicker = <T extends object>({
   helperText = '',
 }: IProps<T>) => {
   const {
-    field,
+    // field,
     fieldState: { error },
   } = useController({
     name,
@@ -27,7 +26,7 @@ export const DateTimePicker = <T extends object>({
 
   const errorMessage = error?.message;
 
-  const [open, setOpen] = useState(false);
+  // const [open, setOpen] = useState(false);
 
   return (
     <Box width="100%">
