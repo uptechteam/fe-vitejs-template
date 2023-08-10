@@ -1,4 +1,4 @@
-name: PR Lint  & Build
+name: PR Lint & Build
 
 on:
   pull_request:
