@@ -60,7 +60,7 @@
     "typescript": "^5.2.2",
     "vite": "^4.5.0",
     "vite-plugin-chunk-split": "^0.4.7",
-    "vite-plugin-svgr": "^4.1.0"
+    "vite-plugin-svgr": "^3.3.0"
   },
   "pnpm": {
     "overrides": {
