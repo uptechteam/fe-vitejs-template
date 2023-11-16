@@ -1,5 +1,6 @@
 {
   "reject": [
-    "vite-plugin-chunk-split"
+    "vite-plugin-chunk-split",
+    "vite-plugin-svgr"
   ]
 }
