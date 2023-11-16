@@ -37,7 +37,7 @@ pnpm i
 ```
 
 ## Template's core:
-* [NodeJS 18](https://nodejs.org/en/)
+* [NodeJS 20](https://nodejs.org/en/)
 * [pnpm](https://pnpm.io/)
 * [ViteJS](https://vitejs.dev/)
 
