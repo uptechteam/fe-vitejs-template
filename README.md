@@ -3,7 +3,7 @@
 ## Introduction
 
 This template uses all the fastest utils/builder to provide the most efficient linting / testing / building process.
-This template also uses NodeJS v18+ (latest LTS), that contains all the latest security and performance improvements.
+This template also uses NodeJS v20+ (latest LTS), that contains all the latest security and performance improvements.
 
 ## Installation
 
@@ -37,7 +37,7 @@ pnpm i
 ```
 
 ## Template's core:
-* [NodeJS 18](https://nodejs.org/en/)
+* [NodeJS 20](https://nodejs.org/en/)
 * [pnpm](https://pnpm.io/)
 * [ViteJS](https://vitejs.dev/)
 
