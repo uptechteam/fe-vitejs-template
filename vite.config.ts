@@ -1,3 +1,4 @@
+import svgRollup from '@svgr/rollup';
 import basicSsl from '@vitejs/plugin-basic-ssl';
 import react from '@vitejs/plugin-react';
 import { defineConfig, UserConfig } from 'vite';
@@ -12,6 +13,16 @@ export default defineConfig(
     publicDir: './public',
     build: {
       outDir: './build',
+      rollupOptions: {
+        plugins: [svgRollup()],
+      },
+    },
+    worker: {
+      rollupOptions: {
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-expect-error
+        plugins: [svgRollup()],
+      },
     },
     server: {
       port,
