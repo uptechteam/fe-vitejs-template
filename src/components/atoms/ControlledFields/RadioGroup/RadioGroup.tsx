@@ -7,8 +7,8 @@ import {
 } from '@mui/material';
 import { useController } from 'react-hook-form';
 
-import { ReactComponent as CheckedRadioIcon } from '~/assets/svgs/checked-radio.svg';
-import { ReactComponent as UncheckedRadioIcon } from '~/assets/svgs/unchecked-radio.svg';
+import CheckedRadioIcon from '~/assets/svgs/checked-radio.svg?react';
+import UncheckedRadioIcon from '~/assets/svgs/unchecked-radio.svg?react';
 
 import { InputLabel } from '../InputLabel';
 import { IProps } from './types';

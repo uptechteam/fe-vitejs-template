@@ -5,7 +5,7 @@ import Box from '@mui/material/Box';
 // import dayjs from 'dayjs';
 import { useController } from 'react-hook-form';
 
-// import { ReactComponent as CalendarIcon } from '~/assets/svgs/caledar.svg';
+// import CalendarIcon from '~/assets/svgs/calendar.svg?react';
 import { InputLabel } from '../InputLabel';
 import { IProps } from './types';
 
