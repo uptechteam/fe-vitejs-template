@@ -27,6 +27,7 @@ createRoot(document.getElementById('root')).render(
           pauseOnFocusLoss
           draggable
           theme="light"
+          stacked
         />
       </ThemeProvider>
     </ErrorBoundary>
