@@ -11,7 +11,7 @@
     "lint": "eslint .",
     "preinstall": "check-engine",
     "prestart": "check-engine",
-    "prepare": "husky install",
+    "prepare": "husky",
     "preview": "vite preview",
     "serve": "vite serve",
     "template:add:remote": "sh ./scripts/add-template-remote.sh",
