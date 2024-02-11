@@ -1,34 +1,25 @@
 {
   "root": true,
-  "parser": "@typescript-eslint/parser",
-  "env": {
-    "browser": true,
-    "amd": true,
-    "node": true
-  },
   "extends": [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/eslint-recommended",
-    "plugin:@typescript-eslint/recommended",
-    "prettier"
+    "hardcore",
+    "hardcore/react",
+    "hardcore/react-performance",
+    "hardcore/react-testing-library",
+    "hardcore/jest",
+    "hardcore/fp",
+    "hardcore/ts"
   ],
-  "plugins": [
-    "@typescript-eslint",
-    "prettier",
-    "simple-import-sort",
-    "unused-imports"
-  ],
-  "rules": {
-    "no-unused-vars": "off",
-    "prettier/prettier": "error",
-    "semi": ["error", "always"],
-    "quotes": ["error", "single"],
-    "simple-import-sort/imports": "error",
-    "simple-import-sort/exports": "error",
-    "unused-imports/no-unused-imports": "error",
-    "unused-imports/no-unused-vars": [
-      "warn",
-      { "vars": "all", "varsIgnorePattern": "^_", "args": "after-used", "argsIgnorePattern": "^_" }
-    ]
-  }
+  "parserOptions": {
+    "project": true
+  },
+  "env": {
+    "browser": true
+  },
+  "overrides": [{
+    "files": ["server/**/*.ts"],
+    "extends": ["hardcore/node"],
+    "env": {
+      "browser": false
+    }
+  }]
 }
