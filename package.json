@@ -22,7 +22,7 @@
     "pnpm": "^8"
   },
   "dependencies": {
-    "@emotion/react": "^11.11.3",
+    "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.0",
     "@mui/material": "^5.15.11",
     "axios": "^1.6.7",
@@ -34,7 +34,7 @@
     "react-toastify": "^10.0.4"
   },
   "devDependencies": {
-    "@commitlint/cli": "^19.0.0",
+    "@commitlint/cli": "^19.0.1",
     "@commitlint/config-conventional": "^19.0.0",
     "@storybook/addon-actions": "^7.6.17",
     "@storybook/addon-essentials": "^7.6.17",
@@ -43,7 +43,7 @@
     "@storybook/react": "^7.6.17",
     "@storybook/react-vite": "^7.6.17",
     "@storybook/testing-library": "^0.2.2",
-    "@types/node": "^20.11.20",
+    "@types/node": "^20.11.21",
     "@types/react": "^18.2.60",
     "@types/react-dom": "^18.2.19",
     "@typescript-eslint/eslint-plugin": "^7.1.0",
