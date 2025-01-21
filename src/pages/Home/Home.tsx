@@ -1,7 +1,7 @@
 import { useCallback, useState } from 'react';
 
-import { Button, Counter } from '~/components/atoms';
 import { displayToastSuccess } from '~/helpers';
+import { Button, Counter } from '~/modules/common';
 
 import { Form } from './Form';
 

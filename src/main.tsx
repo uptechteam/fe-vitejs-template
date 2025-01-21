@@ -7,10 +7,9 @@ import { ErrorBoundary } from 'react-error-boundary';
 import { RouterProvider } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 
-import { ErrorMessage } from '~/components/atoms';
-import { LoadingMessage } from '~/components/atoms/LoadingMessage';
-import { router } from '~/router/routes';
+import { router } from '~/router/router';
 
+import { ErrorMessage, LoadingMessage } from './modules/common';
 import { theme } from './styles/theme';
 
 createRoot(document.getElementById('root')).render(

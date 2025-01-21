@@ -1,1 +1,1 @@
-export * from './displayToast';
+export * from './display-toast';

@@ -4,8 +4,9 @@ import { ErrorBoundary } from 'react-error-boundary';
 import { RouterProvider } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 
-import { ErrorMessage, LoadingMessage } from '~/components/atoms';
-import { router } from '~/router/routes';
+import { router } from '~/router/router';
+
+import { ErrorMessage, LoadingMessage } from './modules/common';
 
 const RootComponent = ({ children }: PropsWithChildren) => {
   return <>{children}</>;

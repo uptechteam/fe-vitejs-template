@@ -7,14 +7,14 @@ import {
   CheckboxGroup,
   CheckboxWithLabel,
   Dropdown,
+  IOption,
   RadioButtonWithLabel,
   RadioGroup,
   Select,
   Textarea,
   TextField,
   Toggle,
-} from '~/components/atoms';
-import { IOption } from '~/components/atoms/ControlledFields/CheckboxGroup/types';
+} from '~/modules/common';
 
 // Update this interface according to your form and move it outside this file
 interface FormData {
