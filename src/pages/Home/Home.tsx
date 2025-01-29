@@ -3,7 +3,7 @@ import { useCallback, useState } from 'react';
 import { displayToastSuccess } from '~/helpers';
 import { Button, Counter } from '~/modules/common';
 
-import { Form } from './Form';
+import { Form } from './form';
 
 export const Home = () => {
   const [value, setValue] = useState<number>(0);
