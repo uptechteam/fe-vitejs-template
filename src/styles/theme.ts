@@ -6,6 +6,7 @@ import { breakpoints } from './breakpoints';
 import { components } from './components';
 import { palette } from './palette';
 import { shape } from './shape';
+
 // import { typography } from './typography';
 
 // Update the Typography's variant prop options

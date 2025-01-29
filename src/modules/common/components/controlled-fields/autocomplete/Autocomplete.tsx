@@ -1,13 +1,30 @@
 import {
-  Autocomplete as MuiAutoComplete,
   Box,
   FormHelperText,
+  Autocomplete as MuiAutoComplete,
   TextField,
 } from '@mui/material';
+import { AutocompleteProps, BoxProps } from '@mui/material';
 import { useController } from 'react-hook-form';
+import { Control, Path } from 'react-hook-form';
 
+import { IOption } from '../checkbox-group/types';
 import { InputLabel } from '../input-label';
-import { IProps } from './types';
+
+type CustomAutoCompleteProps = Omit<
+  AutocompleteProps<IOption, true, false, false>,
+  'renderInput'
+>;
+
+export interface IProps<T> extends CustomAutoCompleteProps {
+  name: Path<T>;
+  control: Control<T, object>;
+  type?: string;
+  outsideError?: string;
+  label?: string;
+  wrapProps?: BoxProps;
+  placeholder?: string;
+}
 
 export const Autocomplete = <T extends object>({
   options = [],
@@ -28,8 +45,6 @@ export const Autocomplete = <T extends object>({
   });
 
   const errorMessage = error?.message || outsideError;
-
-  console.log('field', field);
 
   return (
     <Box width="100%" {...wrapProps}>

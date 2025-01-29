@@ -1,4 +1,4 @@
-import { InputLabel as MuiInputLabel, InputLabelProps } from '@mui/material';
+import { InputLabelProps, InputLabel as MuiInputLabel } from '@mui/material';
 import { FC } from 'react';
 
 export const InputLabel: FC<InputLabelProps> = ({ children, ...props }) => {
